@@ -1,7 +1,7 @@
 domain: example.org
 layout:
 - go.kubebuilder.io/v3
-projectName: devops-india-kubebuilder-okteto
+projectName: kubebuilder-talks
 repo: github.com/kubebuilder-talks
 resources:
 - api:
