@@ -1,0 +1,8 @@
+apiVersion: conference.example.org/v1beta1
+kind: Talk
+metadata:
+  name: talk-sample
+spec:
+  # Add fields here
+  title: "Build an operator with Kubebuilder and okteto"
+  speaker: "Ramiro Berrelleza"

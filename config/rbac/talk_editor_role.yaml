@@ -1,0 +1,24 @@
+# permissions for end users to edit talks.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: talk-editor-role
+rules:
+- apiGroups:
+  - conference.example.org
+  resources:
+  - talks
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - conference.example.org
+  resources:
+  - talks/status
+  verbs:
+  - get
