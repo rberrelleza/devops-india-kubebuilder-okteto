@@ -56,3 +56,4 @@ COPY --from=build /usr/local/bin/helm /usr/local/bin/helm
 COPY --from=build /usr/local/bin/kustomize /usr/local/bin/kustomize
 COPY --from=build /usr/local/bin/civo /usr/local/bin/civo
 COPY --from=build /usr/local/bin/kubebuilder /usr/local/bin/kubebuilder
+COPY --from=docker:20 /usr/local/bin/docker /usr/local/bin/docker
