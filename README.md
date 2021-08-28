@@ -19,7 +19,7 @@ The included codespace includes everything you need.  You only need to bring you
 3. Create the  `Talk`  api: `kubebuilder create api  --group conference --version v1beta1 --kind Talk` (say yes to everything) 
 ## Build the first version
 1. Log in to okteto, so we can use the remote build service: `okteto login --token $OKTETO_TOKEN` 
-2. Log in to civo and get your kubeconfig: `civo apikey add dev $CIVO_API && civo kubernetes config $CLUSTER_ID --save`
+2. Log in to civo and get your kubeconfig: `civo apikey add dev $CIVO_API && civo kubernetes config devops-india-2021 --save`
 3. Log in to the docker registry: `docker login -u ramiro -p $DOCKER_PASS` 
 4. Update `api/v1beta1/talk_types.go` and add the `Title` and `Speaker` fields to `TalkSpec` 
 5. Build the binaries and types, and install the CRDs: `make install` 
