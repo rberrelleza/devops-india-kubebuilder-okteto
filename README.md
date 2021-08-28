@@ -1,2 +1,3 @@
-# devops-india-kubebuilder-okteto
-Build your first Operator with Kubebuilder and Okteto
+# Build your first Operator with Kubebuilder and Okteto
+
+
