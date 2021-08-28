@@ -2,7 +2,7 @@ FROM golang:1.17-buster as build
 
 WORKDIR /builder
 
-ENV KUBEBUIKDER_VERSION 3.1.0
+ENV KUBEBUILDER_VERSION 3.1.0
 ENV CIVO_VERSION 0.7.30
 ENV OKTETO_VERSION 1.13.1
 ENV KUBECTL_VERSION 1.21.0
@@ -36,7 +36,7 @@ RUN curl -sLf --retry 3 -o okteto https://github.com/okteto/okteto/releases/down
     /usr/local/bin/okteto version
 
 # installing kubebuilder
-RUN curl -sLf --retry 3 -o kubebuilder https://github.com/kubernetes-sigs/kubebuilder/releases/download/v${KUBEBUIKDER_VERSION}/kubebuilder_linux_amd64 && \
+RUN curl -sLf --retry 3 -o kubebuilder https://github.com/kubernetes-sigs/kubebuilder/releases/download/v${KUBEBUILDER_VERSION}/kubebuilder_linux_amd64 && \
     chmod +x kubebuilder && \
     mv kubebuilder /usr/local/bin/ && \
     /usr/local/bin/kubebuilder version
@@ -55,3 +55,4 @@ COPY --from=build /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=build /usr/local/bin/helm /usr/local/bin/helm
 COPY --from=build /usr/local/bin/kustomize /usr/local/bin/kustomize
 COPY --from=build /usr/local/bin/civo /usr/local/bin/civo
+COPY --from=build /usr/local/bin/kubebuilder /usr/local/bin/kubebuilder
